@@ -17,8 +17,8 @@ const BUSINESS_INFO: { label: string; value: string }[] = [
   { label: "Phone", value: CONTACT.phoneDisplay },
   { label: "Email", value: CONTACT.emailDisplay },
   { label: "Business Hours", value: CONTACT.businessHours.join(" / ") },
-  { label: "Proprietor / Founder", value: "Siddaram Soddi" },
-  { label: "Registration Details", value: "Details" },
+  { label: "Proprietor / Founder", value: "Prasanna Soddi" },
+  { label: "GSTIN", value: "29AANPI0127M2ZG" },
 ];
 
 const CORE_VALUES = [

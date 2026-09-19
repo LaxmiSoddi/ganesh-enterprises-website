@@ -368,6 +368,31 @@ export const PRODUCTS: Product[] = [
       "Pipeline maintenance and isolation",
     ],
   },
+
+  {
+    slug: "20mmPPRmta",
+    name: "20mm PPR MTA",
+    short:
+      "20mm PPR male threaded adaptor with a brass threaded insert for plumbing connections.",
+    description:
+      "20mm PPR MTA is a PPR fitting with a brass male threaded insert, designed for connecting PPR pipe systems to compatible threaded plumbing components.",
+    image: "/images/20mmPPRmta.jpeg",
+    imageAlt: "20mm PPR MTA with green PPR body and brass male threaded insert",
+    accent: "#1F9D55",
+    features: [
+      "20mm PPR fitting",
+      "Brass male threaded insert",
+      "Suitable for threaded plumbing connections",
+      "Compatible with PPR pipe systems",
+      "Specifications available on request",
+    ],
+    applications: [
+      "PPR plumbing systems",
+      "Water-supply connections",
+      "Residential plumbing",
+      "Commercial plumbing installations",
+    ],
+  },
 ];
 
 export const getProductBySlug = (slug: string | undefined): Product | undefined =>

@@ -27,7 +27,7 @@ export const CONTACT = {
   whatsappDisplay: "+91 86608 42158",
   emailDisplay: "ganeshenterprises191@gmail.com",
   emailHref: "mailto:ganeshenterprises191@gmail.com",
-  address: "Hoskote, Karnataka - near Jio Petrol Pump",
+  address: "Old Madras Road, Hoskote, Bangalore Rural Dist, Karnataka - 562 114",
   businessHours: ["Mon – Sun: 8:00 AM – 8:00 PM",],
 } as const;
 
