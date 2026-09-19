@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ganesh Enterprises design system — dark navy / white / metallic silver / professional blue / PPR green */
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 213 55% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 55% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 55% 15%;
+
+    --primary: 213 76% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 94%;
+    --secondary-foreground: 213 55% 20%;
+
+    --muted: 210 27% 95%;
+    --muted-foreground: 215 18% 45%;
+
+    --accent: 210 30% 93%;
+    --accent-foreground: 213 55% 18%;
+
+    --destructive: 0 72% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 22% 88%;
+    --input: 213 22% 84%;
+    --ring: 213 76% 45%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 213 55% 15%;
+    --sidebar-primary: 213 76% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 30% 93%;
+    --sidebar-accent-foreground: 213 55% 18%;
+    --sidebar-border: 213 22% 88%;
+    --sidebar-ring: 213 76% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand text-white;
+  }
+}
+
+@layer utilities {
+  /* Display headings — condensed, industrial */
+  .heading-display {
+    @apply font-display font-semibold uppercase leading-[1.05] tracking-tight;
+  }
+
+  /* Section label chip above headings */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em];
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform hover:after:scale-x-100;
+  }
+}
