@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
       "High-density polyethylene pipes for water supply, irrigation and underground distribution networks.",
     description:
       "HDPE (High-Density Polyethylene) pipes are flexible, tough and commonly used for water supply, irrigation and underground distribution lines. Offered in straight lengths and coils as per requirement.",
-    image: "/images/product-hdpe.jpg",
+    image: "/images/hdpe-pipes-63mm.jpeg",
     imageAlt: "Black HDPE pipe coils and straight HDPE pipe sections on a light grey studio background",
     accent: "#0A1E36",
     features: [

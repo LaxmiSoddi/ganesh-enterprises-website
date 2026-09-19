@@ -7,6 +7,99 @@ import { QuoteCta } from "@/components/CtaBand";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, PRODUCTS } from "@/data/products";
 
+const HDPE_PRODUCTS = [
+  {
+    name: "90_63mm HDPE Reducer",
+    image: "/images/hdpe-reducer-90-63mm.jpeg",
+    description:
+      "HDPE reducer fitting for connecting HDPE pipes of different diameters.",
+  },
+  {
+    name: "23mm HDPE Elbow",
+    image: "/images/hdpe-elbow-23mm.jpeg",
+    description:
+      "HDPE elbow fitting used for changing the direction of an HDPE pipeline.",
+  },
+  {
+    name: "23mm HDPE Tee",
+    image: "/images/hdpe-tee-23mm.jpeg",
+    description:
+      "HDPE tee fitting used for creating a branch connection in an HDPE pipeline.",
+  },
+  {
+    name: "23mm HDPE Encap",
+    image: "/images/hdpe-encap-23mm.jpeg",
+    description:
+      "HDPE end cap fitting used for closing the end of an HDPE pipeline.",
+  },
+  {
+    name: "63mm HDPE Pipes",
+    image: "/images/product-hdpe.jpg",
+    description:
+      "63mm HDPE pipes for water-supply and pipeline installation requirements.",
+  },
+];
+
+const MDPE_PRODUCTS = [
+  {
+    name: "20mm MDPE Fitting Elbow",
+    image: "/images/20mm-mdpe-fitting-elbow.jpeg",
+    description:
+      "20mm MDPE fitting elbow for connecting MDPE pipes and changing the direction of a pipeline.",
+  },
+  {
+    name: "20mm MDPE FTE Elbow",
+    image: "/images/20mm-mdpe-fte-elbow.jpeg",
+    description:
+      "20mm MDPE FTE elbow fitting for connecting MDPE pipe with a threaded plumbing connection.",
+  },
+  {
+    name: "20mm MDPE FTA",
+    image: "/images/20mm-mdpe-fta.jpeg",
+    description:
+      "20mm MDPE female threaded adaptor for connecting MDPE pipe to compatible threaded components.",
+  },
+  {
+    name: "20mm MDPE Elbow",
+    image: "/images/20mm-mdpe-elbow.jpeg",
+    description:
+      "20mm MDPE elbow fitting for changing the direction of an MDPE pipeline.",
+  },
+  {
+    name: "20mm MDPE Pipe Coupler",
+    image: "/images/20mm-mdpe-pipe-coupler.jpeg",
+    description:
+      "20mm MDPE pipe coupler for connecting sections of MDPE pipeline.",
+  },
+];
+
+const GI_PRODUCTS = [
+  {
+    name: "20mm GI Elbow",
+    image: "/images/20mm-gi-elbow.jpeg",
+    description:
+      "20mm GI elbow fitting for changing the direction of a GI pipeline.",
+  },
+  {
+    name: "20mm GI Collar",
+    image: "/images/20mm-gi-collar.jpeg",
+    description:
+      "20mm GI collar fitting for connecting compatible GI pipeline components.",
+  },
+  {
+    name: "20mm GI Endcap",
+    image: "/images/20mm-gi-endcap.jpeg",
+    description:
+      "20mm GI end cap fitting for closing the end of a GI pipeline.",
+  },
+  {
+    name: "20mm GI Pipes",
+    image: "/images/20mm-gi-pipes.jpeg",
+    description:
+      "20mm GI pipes for plumbing, water-supply and pipeline installation requirements.",
+  },
+];
+
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const product = getProductBySlug(slug);
@@ -132,6 +225,214 @@ export default function ProductDetail() {
         </div>
       </section>
 
+      {/* HDPE additional products */}
+      {product.slug === "hdpe-pipes" && (
+        <section
+          aria-labelledby="hdpe-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                HDPE Range
+              </span>
+
+              <h2
+                id="hdpe-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                HDPE Pipes &amp; Fittings
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of HDPE pipes and fittings available for
+                different pipeline and water-supply requirements.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {HDPE_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${product.slug}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+
+            {/* MDPE additional products */}
+      {product.slug === "mdpe-pipes" && (
+        <section
+          aria-labelledby="mdpe-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                MDPE Range
+              </span>
+
+              <h2
+                id="mdpe-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                MDPE Pipes &amp; Fittings
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of MDPE pipes and fittings available for
+                different pipeline and water-supply requirements.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {MDPE_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${product.slug}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* GI additional products */}
+      {product.slug === "gi-pipes" && (
+        <section
+          aria-labelledby="gi-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                GI Range
+              </span>
+
+              <h2
+                id="gi-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                GI Pipes &amp; Fittings
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of GI pipes and fittings available for
+                different plumbing and pipeline requirements.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {GI_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${product.slug}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      
       {/* Related products */}
       <section aria-labelledby="related-heading" className="bg-steel-50 py-14">
         <div className="container">
