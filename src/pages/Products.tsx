@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { PageHeader } from "@/components/PageHeader";
 import { ProductCard } from "@/components/ProductCard";
-import { QuoteCta } from "@/components/CtaBand";
+import { QuoteCta } from "@/components/CtaBand.tsx";
 import { PRODUCTS } from "@/data/products";
 
 export default function Products() {

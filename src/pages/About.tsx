@@ -4,7 +4,7 @@ import { ArrowRight, BadgeCheck, Handshake, ShieldCheck, Sparkles, Target, Eye, 
 import { Seo } from "@/components/Seo";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
-import { QuoteCta } from "@/components/CtaBand";
+import { QuoteCta } from "@/components/CtaBand.tsx";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/config/site";
 import { PRODUCTS } from "@/data/products";

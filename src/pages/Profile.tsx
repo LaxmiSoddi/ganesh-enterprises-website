@@ -3,7 +3,7 @@ import { Building2, Eye, Target, Users } from "lucide-react";
 import { Seo } from "@/components/Seo";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
-import { QuoteCta } from "@/components/CtaBand";
+import { QuoteCta } from "@/components/CtaBand.tsx";
 import { Link } from "react-router-dom";
 import { COMPANY, CONTACT } from "@/config/site";
 import { PRODUCTS } from "@/data/products";

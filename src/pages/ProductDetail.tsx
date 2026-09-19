@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, FileText } from "lucide-react";
 
 import { Seo } from "@/components/Seo";
 import { PageHeader } from "@/components/PageHeader";
-import { QuoteCta } from "@/components/CtaBand";
+import { QuoteCta } from "@/components/CtaBand.tsx";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, PRODUCTS } from "@/data/products";
 
@@ -432,7 +432,7 @@ export default function ProductDetail() {
           </div>
         </section>
       )}
-      
+
       {/* Related products */}
       <section aria-labelledby="related-heading" className="bg-steel-50 py-14">
         <div className="container">

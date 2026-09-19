@@ -18,7 +18,7 @@ import { Seo } from "@/components/Seo";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { InquiryForm } from "@/components/InquiryForm";
-import { QuoteCta, SupportCta } from "@/components/CtaBand";
+import { QuoteCta, SupportCta } from "@/components/CtaBand.tsx";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/config/site";
 import { PRODUCTS } from "@/data/products";

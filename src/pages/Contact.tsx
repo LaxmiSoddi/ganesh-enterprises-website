@@ -4,7 +4,7 @@ import { Seo } from "@/components/Seo";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { InquiryForm } from "@/components/InquiryForm";
-import { SupportCta } from "@/components/CtaBand";
+import { SupportCta } from "@/components/CtaBand.tsx";
 import { CONTACT, waLink } from "@/config/site";
 
 export default function Contact() {
