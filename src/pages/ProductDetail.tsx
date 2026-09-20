@@ -19,19 +19,19 @@ const HDPE_PRODUCTS = [
       "HDPE reducer fitting for connecting HDPE pipes of different diameters.",
   },
   {
-    name: "23mm HDPE Elbow",
+    name: "63mm HDPE Elbow",
     image: "/images/hdpe-elbow-23mm.jpeg",
     description:
       "HDPE elbow fitting used for changing the direction of an HDPE pipeline.",
   },
   {
-    name: "23mm HDPE Tee",
+    name: "63mm HDPE Tee",
     image: "/images/hdpe-tee-23mm.jpeg",
     description:
       "HDPE tee fitting used for creating a branch connection in an HDPE pipeline.",
   },
   {
-    name: "23mm HDPE Encap",
+    name: "63mm HDPE Encap",
     image: "/images/hdpe-encap-23mm.jpeg",
     description:
       "HDPE end cap fitting used for closing the end of an HDPE pipeline.",
@@ -102,6 +102,14 @@ const GI_PRODUCTS = [
     description:
       "20mm GI pipes for plumbing, water-supply and pipeline installation requirements.",
   },
+
+  {
+    name: "20mm GI Ball Valve",
+    image: "/images/20mm-gi-gate-valve.jpeg",
+    description:
+      "20mm GI ball valve suitable for controlling water flow in plumbing and pipeline installations.",
+  },
+
 ];
 
 const PPR_PRODUCTS = [
@@ -165,6 +173,13 @@ const PPR_PRODUCTS = [
     image: "/images/20mmPPRmta.jpeg",
     description:
       "20mm PPR male threaded adaptor with a brass threaded insert for plumbing connections.",
+  },
+
+  {
+    name: "20mm PPR Pipes Prince",
+    image: "/images/20mm-ppr-pipes-prince.jpeg",
+    description:
+      "20mm Prince PPR pipes suitable for hot and cold water plumbing and reliable pipeline installations.",
   },
 ];
 
@@ -503,73 +518,73 @@ export default function ProductDetail() {
 
 
       {/* PPR additional products */}
-{product.slug === "ppr-pipes" && (
-  <section
-    aria-labelledby="ppr-products-heading"
-    className="bg-white py-14"
-  >
-    <div className="container">
-      <div className="max-w-3xl">
-        <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
-          PPR Range
-        </span>
-
-        <h2
-          id="ppr-products-heading"
-          className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+      {product.slug === "ppr-pipes" && (
+        <section
+          aria-labelledby="ppr-products-heading"
+          className="bg-white py-14"
         >
-          PPR Pipes &amp; Fittings
-        </h2>
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                PPR Range
+              </span>
 
-        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-          Explore our range of PPR fittings, valves and water-supply products
-          available for different plumbing requirements.
-        </p>
-      </div>
+              <h2
+                id="ppr-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                PPR Pipes &amp; Fittings
+              </h2>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {PPR_PRODUCTS.map((item) => (
-          <div
-            key={item.name}
-            className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
-          >
-            <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
-              <img
-                src={item.image}
-                alt={item.name}
-                width={64}
-                height={64}
-                loading="lazy"
-                className="h-full w-full object-cover"
-              />
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of PPR fittings, valves and water-supply products
+                available for different plumbing requirements.
+              </p>
             </div>
 
-            <div className="min-w-0">
-              <h3 className="text-sm font-semibold text-navy-900">
-                {item.name}
-              </h3>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {PPR_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
 
-              <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
-                {item.description}
-              </p>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
 
-              <Link
-                to={`/contact?product=${product.slug}`}
-                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
-              >
-                Enquire
-                <ArrowRight
-                  aria-hidden="true"
-                  className="h-3.5 w-3.5"
-                />
-              </Link>
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${product.slug}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-)}
+        </section>
+      )}
 
 
       {/* Supreme CPVC additional products */}

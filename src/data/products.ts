@@ -273,31 +273,6 @@ export const PRODUCTS: Product[] = [
     ],
   },
 
-  {
-    slug: "pipe-fittings",
-    name: "Pipe Fittings",
-    short:
-      "Complete range of fittings — elbows, tees, couplers, unions, reducers and more for every pipeline.",
-    description:
-      "A complete range of pipe fittings to complete every pipeline — elbows, tees, couplers, unions, reducers, nipples, adaptors and more across PPR, HDPE, MDPE and GI product lines.",
-    image: "/images/product-fittings.jpg",
-    imageAlt: "Assorted plumbing pipe fittings including elbows, tees, couplers and reducers arranged on a light grey background",
-    accent: "#1A4F8A",
-    features: [
-      "Elbows, tees, couplers, unions and reducers",
-      "Compatible with PPR, HDPE, MDPE and GI lines",
-      "Brass, PVC, PP and galvanized options",
-      "Bulk quantities supplied as per requirement",
-      "Specifications available on request",
-    ],
-    applications: [
-      "Completing new pipeline installations",
-      "Repairs and maintenance work",
-      "Plumbing retrofit projects",
-      "Dealer and contractor supply requirements",
-    ],
-  },
-
 ];
 
 export const getProductBySlug = (slug: string | undefined): Product | undefined =>

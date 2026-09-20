@@ -17,4 +17,11 @@ export const DI_PRODUCTS: DiProduct[] = [
     description:
       "55mm DI valve suitable for water supply and pipeline control applications.",
   },
+
+  {
+    name: "80mm DI Sluice Valve",
+    image: "/images/80mm-di-sluice-valve.jpeg",
+    description:
+      "80mm DI valve suitable for water supply and pipeline control applications.",
+  },
 ];
