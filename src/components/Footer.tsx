@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 
 import { COMPANY, CONTACT, waLink } from "@/config/site";
 import { PRODUCTS } from "@/data/products";
@@ -28,17 +28,25 @@ export function Footer() {
               loading="lazy"
               className="h-14 w-14 rounded-md shadow-md"
             />
+
             <span className="flex flex-col leading-none">
               <span className="font-display text-2xl font-bold uppercase tracking-wide text-white">
                 Ganesh
               </span>
+
               <span className="text-[0.65rem] font-semibold uppercase tracking-[0.34em] text-steel-400">
                 Enterprises
               </span>
             </span>
           </Link>
-          <p className="mt-4 text-sm font-semibold tracking-[0.14em] text-steel-400">{COMPANY.tagline}</p>
-          <p className="mt-3 text-sm leading-relaxed">{COMPANY.description}</p>
+
+          <p className="mt-4 text-sm font-semibold tracking-[0.14em] text-steel-400">
+            {COMPANY.tagline}
+          </p>
+
+          <p className="mt-3 text-sm leading-relaxed">
+            {COMPANY.description}
+          </p>
         </div>
 
         {/* Quick links */}
@@ -46,11 +54,19 @@ export function Footer() {
           <h3 className="font-display text-lg font-semibold uppercase tracking-wider text-white">
             Quick Links
           </h3>
-          <span aria-hidden="true" className="mt-2 block h-0.5 w-10 bg-brand" />
+
+          <span
+            aria-hidden="true"
+            className="mt-2 block h-0.5 w-10 bg-brand"
+          />
+
           <ul className="mt-4 space-y-2.5 text-sm">
             {QUICK_LINKS.map((link) => (
               <li key={link.to}>
-                <Link to={link.to} className="transition-colors hover:text-white">
+                <Link
+                  to={link.to}
+                  className="transition-colors hover:text-white"
+                >
                   {link.label}
                 </Link>
               </li>
@@ -63,11 +79,19 @@ export function Footer() {
           <h3 className="font-display text-lg font-semibold uppercase tracking-wider text-white">
             Products
           </h3>
-          <span aria-hidden="true" className="mt-2 block h-0.5 w-10 bg-brand" />
+
+          <span
+            aria-hidden="true"
+            className="mt-2 block h-0.5 w-10 bg-brand"
+          />
+
           <ul className="mt-4 space-y-2.5 text-sm">
             {PRODUCTS.map((product) => (
               <li key={product.slug}>
-                <Link to={`/products/${product.slug}`} className="transition-colors hover:text-white">
+                <Link
+                  to={`/products/${product.slug}`}
+                  className="transition-colors hover:text-white"
+                >
                   {product.name}
                 </Link>
               </li>
@@ -80,34 +104,105 @@ export function Footer() {
           <h3 className="font-display text-lg font-semibold uppercase tracking-wider text-white">
             Contact
           </h3>
-          <span aria-hidden="true" className="mt-2 block h-0.5 w-10 bg-brand" />
-          {/* ✏️ TODO: Replace placeholders in src/config/site.ts with real details. */}
+
+          <span
+            aria-hidden="true"
+            className="mt-2 block h-0.5 w-10 bg-brand"
+          />
+
           <ul className="mt-4 space-y-3 text-sm">
+            {/* Primary Phone */}
             <li className="flex items-start gap-2.5">
-              <Phone aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
-              <span>
+              <Phone
+                aria-hidden="true"
+                className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+              />
+
+              <a
+                href={CONTACT.phoneHref}
+                className="transition-colors hover:text-white"
+              >
                 <span className="sr-only">Phone — </span>
                 {CONTACT.phoneDisplay}
-              </span>
+              </a>
             </li>
+
+            {/* Alternative Phone */}
             <li className="flex items-start gap-2.5">
-              <MessageCircle aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-ppr" />
-              <span>
+              <Phone
+                aria-hidden="true"
+                className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+              />
+
+              <a
+                href={CONTACT.alternatePhoneHref}
+                className="transition-colors hover:text-white"
+              >
+                <span className="sr-only">Alternative Phone — </span>
+                {CONTACT.alternatePhoneDisplay}
+              </a>
+            </li>
+
+            {/* WhatsApp */}
+            <li className="flex items-start gap-2.5">
+              <MessageCircle
+                aria-hidden="true"
+                className="mt-0.5 h-4 w-4 shrink-0 text-ppr"
+              />
+
+              <a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
                 <span className="sr-only">WhatsApp — </span>
                 {CONTACT.whatsappDisplay}
-              </span>
+              </a>
             </li>
+
+            {/* Email */}
             <li className="flex items-start gap-2.5">
-              <span aria-hidden="true" className="mt-0.5 w-4 shrink-0 text-center font-semibold text-brand">
+              <span
+                aria-hidden="true"
+                className="mt-0.5 w-4 shrink-0 text-center font-semibold text-brand"
+              >
                 @
               </span>
-              <span>
+
+              <a
+                href={CONTACT.emailHref}
+                className="transition-colors hover:text-white"
+              >
                 <span className="sr-only">Email — </span>
                 {CONTACT.emailDisplay}
-              </span>
+              </a>
             </li>
+
+            {/* Instagram */}
             <li className="flex items-start gap-2.5">
-              <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+              <Instagram
+                aria-hidden="true"
+                className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+              />
+
+              <a
+                href={CONTACT.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-white"
+              >
+                {CONTACT.instagramDisplay}
+              </a>
+            </li>
+
+            {/* Address */}
+            <li className="flex items-start gap-2.5">
+              <MapPin
+                aria-hidden="true"
+                className="mt-0.5 h-4 w-4 shrink-0 text-brand"
+              />
+
               <span>
                 <span className="sr-only">Address — </span>
                 {CONTACT.address}
@@ -117,14 +212,18 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Copyright */}
       <div className="border-t border-navy-700">
         <div className="container flex flex-col items-center justify-between gap-2 py-5 text-xs text-steel-400 sm:flex-row">
           <p>© 2026 Ganesh Enterprises. All rights reserved.</p>
-          <p className="tracking-[0.18em]">PIPES • FITTINGS • PLUMBING SOLUTIONS</p>
+
+          <p className="tracking-[0.18em]">
+            PIPES • FITTINGS • PLUMBING SOLUTIONS
+          </p>
         </div>
       </div>
 
-      {/* Keep waLink referenced for future contact-detail wiring — see site.ts TODOs */}
+      {/* Keep waLink referenced for future contact-detail wiring */}
       <span className="hidden">{waLink()}</span>
     </footer>
   );

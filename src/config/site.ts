@@ -23,10 +23,15 @@ export const WHATSAPP_NUMBER = "WHATSAPP_NUMBER_HERE";
 // ✏️ TODO: Replace placeholders with real contact details.
 export const CONTACT = {
   phoneDisplay: "+91 86608 42158",
-  phoneHref: "tel:8660842158",
+  phoneHref: "tel:+918660842158",
+  alternatePhoneDisplay: "+91 87923 88789",
+  alternatePhoneHref: "tel:+918792388789",
   whatsappDisplay: "+91 86608 42158",
   emailDisplay: "ganeshenterprises191@gmail.com",
   emailHref: "mailto:ganeshenterprises191@gmail.com",
+  instagramDisplay: "ganeshenterprises_banglore",
+  instagramUrl:
+    "https://www.instagram.com/ganeshenterprises_bangalore?stkn=MTl5bGoxcmcyOGpkeA==",
   address: "Old Madras Road, Hoskote, Bangalore Rural Dist, Karnataka - 562 114",
   businessHours: ["Mon – Sun: 8:00 AM – 8:00 PM",],
 } as const;

@@ -68,15 +68,57 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50">
+      
+      {/* Delivery notice */}
+      <div className="border-b border-red-200 bg-red-50">
+        <div className="container flex min-h-9 items-center justify-center py-2">
+          <p className="text-center text-xs font-bold tracking-wide text-red-600 sm:text-sm">
+            We deliver materials all over India.
+          </p>
+        </div>
+      </div>
+
       {/* Top utility bar */}
       <div className="hidden bg-navy-900 text-steel-300 md:block">
-        <div className="container flex h-9 items-center justify-between text-xs">
+        <div className="container flex min-h-9 items-center justify-between gap-4 text-xs">
           <p className="tracking-[0.18em]">{COMPANY.tagline}</p>
-          <div className="flex items-center gap-5">
-            <span>Phone: {CONTACT.phoneDisplay}</span>
+
+          <div className="flex items-center gap-4">
+            <a
+              href={CONTACT.phoneHref}
+              className="transition-colors hover:text-white"
+            >
+              Phone: {CONTACT.phoneDisplay}
+            </a>
+
             <span className="text-steel-600" aria-hidden="true">
               |
             </span>
+
+            <a
+              href={CONTACT.alternatePhoneHref}
+              className="transition-colors hover:text-white"
+            >
+              {CONTACT.alternatePhoneDisplay}
+            </a>
+
+            <span className="text-steel-600" aria-hidden="true">
+              |
+            </span>
+
+            <a
+              href={CONTACT.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-white"
+            >
+              Instagram: {CONTACT.instagramDisplay}
+            </a>
+
+            <span className="text-steel-600" aria-hidden="true">
+              |
+            </span>
+
             <span>Email: {CONTACT.emailDisplay}</span>
           </div>
         </div>

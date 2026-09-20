@@ -6,6 +6,10 @@ import { PageHeader } from "@/components/PageHeader";
 import { QuoteCta } from "@/components/CtaBand.tsx";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, PRODUCTS } from "@/data/products";
+import { SUPREME_CPVC_PRODUCTS } from "@/data/supremeCpvcProducts";
+import { PUC_PRODUCTS } from "@/data/pucProducts";
+import { PIPES_PRODUCTS } from "@/data/pipesProducts";
+import { DI_PRODUCTS } from "@/data/diProducts";
 
 const HDPE_PRODUCTS = [
   {
@@ -97,6 +101,70 @@ const GI_PRODUCTS = [
     image: "/images/20mm-gi-pipes.jpeg",
     description:
       "20mm GI pipes for plumbing, water-supply and pipeline installation requirements.",
+  },
+];
+
+const PPR_PRODUCTS = [
+  {
+    name: "20mm PPR Elbow",
+    image: "/images/20mmPPRelbow.jpeg",
+    description:
+      "20mm PPR elbow fitting for changing the direction of PPR water pipelines.",
+  },
+
+  {
+    name: "20mm PPR Collar",
+    image: "/images/20mmPPRcollar.jpeg",
+    description:
+      "20mm PPR collar fitting for secure connection and installation of PPR pipeline components.",
+  },
+  {
+    name: "20mm PPR Union",
+    image: "/images/20mmPPRunion.jpeg",
+    description:
+      "20mm PPR union fitting for connecting and disconnecting sections of PPR pipelines.",
+  },
+  {
+    name: "20mm PPR FTA",
+    image: "/images/20mmPPRfta.jpeg",
+    description:
+      "20mm PPR female threaded adaptor for connecting PPR pipelines to threaded plumbing components.",
+  },
+  {
+    name: "Water Meter Box",
+    image: "/images/WaterMeterBox.jpeg",
+    description:
+      "Water meter box for housing and protecting water meter installations.",
+  },
+  {
+    name: "15mm Tap Cock",
+    image: "/images/15mm-tap-cock.jpeg",
+    description:
+      "15mm tap cock for controlling water flow in plumbing and water supply installations.",
+  },
+  {
+    name: "Water Meter NBESON",
+    image: "/images/water-meter-nbeson.jpeg",
+    description:
+      "NBESON water meter for measuring water consumption in water supply installations.",
+  },
+  {
+    name: "15mm FCV",
+    image: "/images/15mm-fcv.jpeg",
+    description:
+      "15mm flow control valve for managing water flow in plumbing and water supply systems.",
+  },
+  {
+    name: "20mm PPR Ball Valve",
+    image: "/images/20mm-ppr-ball-valve.jpeg",
+    description:
+      "20mm PPR ball valve for controlling and isolating water flow in PPR pipeline systems.",
+  },
+  {
+    name: "20mm PPR MTA",
+    image: "/images/20mmPPRmta.jpeg",
+    description:
+      "20mm PPR male threaded adaptor with a brass threaded insert for plumbing connections.",
   },
 ];
 
@@ -428,6 +496,562 @@ export default function ProductDetail() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+
+      {/* PPR additional products */}
+{product.slug === "ppr-pipes" && (
+  <section
+    aria-labelledby="ppr-products-heading"
+    className="bg-white py-14"
+  >
+    <div className="container">
+      <div className="max-w-3xl">
+        <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+          PPR Range
+        </span>
+
+        <h2
+          id="ppr-products-heading"
+          className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+        >
+          PPR Pipes &amp; Fittings
+        </h2>
+
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+          Explore our range of PPR fittings, valves and water-supply products
+          available for different plumbing requirements.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {PPR_PRODUCTS.map((item) => (
+          <div
+            key={item.name}
+            className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+          >
+            <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+              <img
+                src={item.image}
+                alt={item.name}
+                width={64}
+                height={64}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="min-w-0">
+              <h3 className="text-sm font-semibold text-navy-900">
+                {item.name}
+              </h3>
+
+              <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                {item.description}
+              </p>
+
+              <Link
+                to={`/contact?product=${product.slug}`}
+                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+              >
+                Enquire
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5"
+                />
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+
+      {/* Supreme CPVC additional products */}
+        {product.slug === "supreme-cpvc-pipes" && (
+          <section
+            aria-labelledby="supreme-cpvc-products-heading"
+            className="bg-white py-14"
+          >
+            <div className="container">
+              <div className="max-w-3xl">
+                <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                  Supreme CPVC Range
+                </span>
+
+                <h2
+                  id="supreme-cpvc-products-heading"
+                  className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+                >
+                  Supreme CPVC Pipes &amp; Fittings
+                </h2>
+
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  Explore our range of Supreme CPVC pipes, fittings and water storage
+                  products for different plumbing requirements.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {SUPREME_CPVC_PRODUCTS.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                  >
+                    <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        width={64}
+                        height={64}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-semibold text-navy-900">
+                        {item.name}
+                      </h3>
+
+                      <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                        {item.description}
+                      </p>
+
+                      <Link
+                        to={`/contact?product=${encodeURIComponent(item.name)}`}
+                        className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                      >
+                        Enquire
+                        <ArrowRight
+                          aria-hidden="true"
+                          className="h-3.5 w-3.5"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+      {/* PUC additional products */}
+      {product.slug === "puc-products" && (
+        <section
+          aria-labelledby="puc-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                PUC Range
+              </span>
+
+              <h2
+                id="puc-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                PUC Products
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of PUC pipes and fittings for drainage, plumbing
+                and general pipeline applications.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {PUC_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${encodeURIComponent(item.name)}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Pipes additional products */}
+      {product.slug === "pipes" && (
+        <section
+          aria-labelledby="pipes-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                Pipes Range
+              </span>
+
+              <h2
+                id="pipes-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                Pipes
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of pipes for underground drainage, water supply
+                and column pipe applications.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {PIPES_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${encodeURIComponent(item.name)}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* DI additional products */}
+      {product.slug === "di" && (
+        <section
+          aria-labelledby="di-products-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                DI Range
+              </span>
+
+              <h2
+                id="di-products-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                DI Valves
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Explore our range of DI valves for water supply, pipeline control
+                and infrastructure applications.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {DI_PRODUCTS.map((item) => (
+                <div
+                  key={item.name}
+                  className="group flex items-center gap-3 rounded-lg border border-steel-200 bg-white p-4 shadow-card transition-shadow hover:shadow-card-lg"
+                >
+                  <div className="h-16 w-16 shrink-0 overflow-hidden rounded-md border border-steel-200 bg-steel-50">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      width={64}
+                      height={64}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold text-navy-900">
+                      {item.name}
+                    </h3>
+
+                    <p className="mt-1 line-clamp-3 text-xs leading-snug text-muted-foreground">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      to={`/contact?product=${encodeURIComponent(item.name)}`}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand hover:underline"
+                    >
+                      Enquire
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Electrofusion Welding Machine specifications */}
+      {product.slug === "electrofusion-welding-machine" && (
+        <section
+          aria-labelledby="electrofusion-specifications-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                Technical Specifications
+              </span>
+
+              <h2
+                id="electrofusion-specifications-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                Electrofusion Welding Machine
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                Automatic electrofusion welding machine suitable for controlled
+                pipe jointing applications.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-lg border border-steel-200 bg-steel-50 p-5">
+                <h3 className="text-base font-semibold text-navy-900">
+                  Technical Specifications
+                </h3>
+
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Welding range:
+                    </span>{" "}
+                    20–200mm
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Operating modes:
+                    </span>{" "}
+                    Barcode and manual data entry as standard
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Input cable:
+                    </span>{" "}
+                    3.5 metres
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Output cable:
+                    </span>{" "}
+                    3.5 metres
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Joint data memory:
+                    </span>{" "}
+                    2,000 welds
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-steel-200 bg-white p-5 shadow-card">
+                <h3 className="text-base font-semibold text-navy-900">
+                  Product Information
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  The Electrofusion Welding Machine Automatic 200 EE is designed
+                  for electrofusion pipe jointing applications with a welding
+                  range of 20–200mm.
+                </p>
+
+                <Link
+                  to={`/contact?product=${encodeURIComponent(
+                    "Electrofusion Welding Machine Automatic 200 EE"
+                  )}`}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
+                >
+                  Enquire about this product
+                  <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 20mm PPR Prince Heating Machine specifications */}
+      {product.slug === "20mm-ppr-prince-heating-machine" && (
+        <section
+          aria-labelledby="ppr-heating-machine-heading"
+          className="bg-white py-14"
+        >
+          <div className="container">
+            <div className="max-w-3xl">
+              <span className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                Technical Information
+              </span>
+
+              <h2
+                id="ppr-heating-machine-heading"
+                className="heading-display mt-2 text-3xl text-navy-900 sm:text-4xl"
+              >
+                20mm PPR Prince Heating Machine
+              </h2>
+
+              <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                A practical heating machine for socket-fusion jointing of PPR
+                pipes and fittings, suitable for plumbing installation work.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {/* Technical Specifications */}
+              <div className="rounded-lg border border-steel-200 bg-steel-50 p-5">
+                <h3 className="text-base font-semibold text-navy-900">
+                  Technical Specifications
+                </h3>
+
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      Application:
+                    </span>{" "}
+                    PPR pipe and fitting socket-fusion jointing
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      PPR system heating temperature:
+                    </span>{" "}
+                    260°C
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      20mm welding depth:
+                    </span>{" "}
+                    14.5mm
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      20mm heating time:
+                    </span>{" "}
+                    6 seconds
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      20mm welding time:
+                    </span>{" "}
+                    4 seconds
+                  </li>
+
+                  <li>
+                    <span className="font-semibold text-navy-900">
+                      20mm cooling time:
+                    </span>{" "}
+                    2 minutes
+                  </li>
+                </ul>
+              </div>
+
+              {/* Product Information */}
+              <div className="rounded-lg border border-steel-200 bg-white p-5 shadow-card">
+                <h3 className="text-base font-semibold text-navy-900">
+                  Product Information
+                </h3>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  The 20mm PPR Prince Heating Machine is used for heat-fusion
+                  jointing of PPR pipes and fittings. The pipe and fitting are
+                  heated using the appropriate dies and then joined while the
+                  heated surfaces are ready for fusion.
+                </p>
+
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  For Prince PPR systems, the recommended thermostat setting is
+                  260°C. Correct heating, alignment and cooling are important for
+                  producing a reliable fusion joint.
+                </p>
+
+                <Link
+                  to={`/contact?product=${encodeURIComponent(
+                    "20mm PPR Prince Heating Machine"
+                  )}`}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand hover:underline"
+                >
+                  Enquire about this product
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="h-4 w-4"
+                  />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
